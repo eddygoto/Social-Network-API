@@ -3,7 +3,7 @@ const { User, Thought } = require('../models');
 module.exports = {
   // Get all thoughts
   getThought(req, res) {
-    getThought.find({})
+    Thought.find({})
       .then((thought) => res.json(thought))
       .catch((err) => res.status(500).json(err));
   },
@@ -52,7 +52,7 @@ module.exports = {
             { new: true }
           )
       )
-      .then(() => res.json({ message: 'Thought deleted, no user found!' }))
+      .then(() => res.json({ message: 'Thought deleted!' }))
       .catch((err) => res.status(500).json(err));
   },
   // Update a thought
@@ -87,7 +87,7 @@ module.exports = {
   deleteReaction(req, res) {
     Thought.findOneAndDelete(
       { _id: req.params.thoughtId },
-      { $pull: { reactions: { reactionId: req.body.reactionId } } },
+      { $pull: { reactions: req.body.reactionId } },
       { runValidators: true, new: true }
     )
     .then((thought) => 
