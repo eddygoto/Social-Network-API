@@ -37,6 +37,9 @@ Open insomnia in order to view the data. Run `node index.js` to start the server
 
 Link to Demo: https://watch.screencastify.com/v/frbVMAQtjdCKcjZOWlTf
 
+Bugfixes:
+DELETE reaction and POST user demonstration: https://watch.screencastify.com/v/dlz5GYsSdHjw7pdnIF42
+
 ## Contributing
 
 N/A
